@@ -10,16 +10,24 @@ public class Auto {
 	public static int cantidadCreados;
 	
 	public int cantidadAsientos(){
-		int asientos = this.asientos.length;
-		return asientos;
+		return this.asientos.length;
 	}
 	
 	public String verificarIntegridad(){
 		int registroAuto = this.registro;
-		int registroAsiento = new Asiento().registro;
-		int registroMotor = new Motor().registro;
-		if(registroAuto == registroAsiento && registroAsiento == registroMotor) {
-			System.out.println("Auto original");
+		int registroMotor = motor.registro;
+		int[] registroAsiento = new int[cantidadAsientos()];
+
+		for(i=0;i <= cantidadAsientos(); i++) {
+			registroAsiento[i] = asientos[i].registro;
+		}
+		
+		if(registroAuto == registroMotor) {
+			for(i=0;i <= cantidadAsientos(); i++) {
+				if(registroAuto == registroAsiento[i]) continue;
+				else System.out.println("Las piezas no son originales");
+			}
+			else System.out.println("Auto original");
 		}
 		else {
 			System.out.println("Las piezas no son originales");
