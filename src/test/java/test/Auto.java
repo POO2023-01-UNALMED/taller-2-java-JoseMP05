@@ -21,18 +21,17 @@ public class Auto {
 	public String verificarIntegridad(){
 		int registroAuto = this.registro;
 		int registroMotor = motor.registro;
-		int[] registroAsiento = new int[cantidadAsientos()];
-
-		for(int i = 0; i < cantidadAsientos(); i++) {
-			registroAsiento[i] = asientos[i].registro;
-		}
 		
-		if(registroAuto == registroMotor) {
-			for(int i = 0; i < cantidadAsientos(); i++) {
-				if(registroAsiento[i] != 0 && registroAuto == registroAsiento[i]) continue;
-				else return "Las piezas no son originales";
+		if (registroAuto == registroMotor) {
+			for(int i = 0; i < asientos.length; i++) {
+				int registroasiento = asientos[i].registro;
+				if (registroasiento != 0) {
+					if(registroasiento == registroAuto){
+						return "Auto original";
+					}
+					else return "Las piezas no son originales";
+				}
 			}
-			return "Auto original";
 		}
 		return "Las piezas no son originales";
 	}
