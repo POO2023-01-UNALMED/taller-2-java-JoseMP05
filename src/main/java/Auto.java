@@ -25,9 +25,13 @@ public class Auto {
 		if(registroAuto == registroMotor) {
 			for(i=0;i <= cantidadAsientos(); i++) {
 				if(registroAuto == registroAsiento[i]) continue;
-				else System.out.println("Las piezas no son originales");
+				else {
+					System.out.println("Las piezas no son originales");
+				}
 			}
-			else System.out.println("Auto original");
+			else {
+				System.out.println("Auto original");
+				}
 		}
 		else {
 			System.out.println("Las piezas no son originales");
