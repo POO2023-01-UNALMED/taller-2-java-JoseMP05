@@ -6,7 +6,6 @@ public class Asiento {
 	public int registro;
 	
 	public void cambiarColor(String color) {
-		this.color = color;
 		switch (color){
 			case "rojo": this.color = color; 
 				break;
